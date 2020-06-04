@@ -47,7 +47,7 @@ class Student
 
     DB[:conn].execute(sql, grade).map do |row|
     student.grade = 9
-     end
+    end
   end
 
   def save
