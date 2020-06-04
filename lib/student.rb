@@ -45,7 +45,7 @@ class Student
     WHERE grade = 9
     LIMIT 1
   end
-  
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
