@@ -72,6 +72,9 @@ class Student
   end.first
   end
 
+  def self.
+  end
+  
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
