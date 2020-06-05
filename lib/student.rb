@@ -102,14 +102,11 @@ class Student
     SELECT *
     FROM students
     WHERE students.grade = ?
-    LIMIT ?
     SQL
 
-    students = DB[:conn].execute(sql, grade).map do |row|
-      self.new_from_db(row)
-    end
+    students = DB[:conn].execute(sql, grade)
   end
-
+  
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
