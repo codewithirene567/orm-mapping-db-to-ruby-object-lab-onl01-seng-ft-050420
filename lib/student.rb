@@ -84,18 +84,15 @@ class Student
     end
   end
 
+
   def self.first_X_students_in_grade_10(x)
     sql = <<-SQL
-    SELECT *
-    FROM students
-    WHERE students.grade = 10
-    LIMIT ?
+       SELECT * FROM students WHERE grade = 10 LIMIT ?
     SQL
 
-    students = DB[:conn].execute(sql, x)
-
+    s = DB[:conn].execute(sql, x)
+    # binding.pry
   end
-  
 
 
   def self.create_table
