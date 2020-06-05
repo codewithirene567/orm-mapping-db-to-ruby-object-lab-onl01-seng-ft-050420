@@ -92,8 +92,9 @@ class Student
     LIMIT ?
     SQL
 
-    students = DB[:conn].execute(sql, x)
-
+    students = DB[:conn].execute(sql, x).map do |row|
+      self.new_from_db(row)
+    end
   end
 
   def self.create_table
