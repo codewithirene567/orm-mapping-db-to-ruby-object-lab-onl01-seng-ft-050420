@@ -93,10 +93,10 @@ class Student
     SQL
 
     DB[:conn].execute(sql, x)
-    end
+    
   end
 
-  
+
 
   def self.create_table
     sql = <<-SQL
